@@ -49,6 +49,25 @@ BISDN_SWITCH_IMAGE_EXTRA_INSTALL += "\
     vim \
     "
 
+# dependencies/dependencies.yaml
+# Default packages to be installed on all supported OS.
+BISDN_SWITCH_IMAGE_EXTRA_INSTALL += "\
+    autoconf \
+    cmake \
+    flex \
+    gcc \
+    libtool \
+    make \
+    net-tools \
+    python3-dev \
+    "
+
+# Default packages to be installed for all supported versions of Ubuntu.
+BISDN_SWITCH_IMAGE_EXTRA_INSTALL += "\
+    aspell \
+    "
+
+
 IMAGE_LINGUAS = "en-us"
 
 LICENSE = "MIT"
