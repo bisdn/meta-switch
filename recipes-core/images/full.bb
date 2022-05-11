@@ -8,7 +8,7 @@ IMAGE_FEATURES += " package-management"
 BISDN_SWITCH_IMAGE_EXTRA_INSTALL += "\
     baseboxd \
     baseboxd-tools \
-    bridge-utils  \
+    bridge-utils \
     curl \
     docker-ce \
     ethtool \
@@ -65,8 +65,48 @@ BISDN_SWITCH_IMAGE_EXTRA_INSTALL += "\
 # Default packages to be installed for all supported versions of Ubuntu.
 BISDN_SWITCH_IMAGE_EXTRA_INSTALL += "\
     aspell \
+    bzip2 \
+    bzip2-dev \
+    bridge-utils \
+    expat \
+    elfutils \
+    elfutils-dev \
+    glibc-dev \
+    libedit \
+    libedit-dev \
+    libffi \
+    libffi-dev \
+    pkgconfig \
+    sqlite3 \
     "
 
+# thrift
+BISDN_SWITCH_IMAGE_EXTRA_INSTALL += "\
+    bison \
+    libevent \
+    libevent-dev \
+    openssl \
+    openssl-dev \
+    "
+
+# bf_platforms
+BISDN_SWITCH_IMAGE_EXTRA_INSTALL += "\
+    "
+
+# switch_p4_p16
+BISDN_SWITCH_IMAGE_EXTRA_INSTALL += "\
+    libnl \
+    libnl-dev \
+    libxml-simple-perl \
+    "
+
+# bf_diags
+BISDN_SWITCH_IMAGE_EXTRA_INSTALL += "\
+    "
+
+# pi
+BISDN_SWITCH_IMAGE_EXTRA_INSTALL += "\
+    "
 
 IMAGE_LINGUAS = "en-us"
 
