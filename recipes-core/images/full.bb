@@ -113,6 +113,7 @@ BISDN_SWITCH_IMAGE_EXTRA_INSTALL += "\
     htop \
     tree \
     gptfdisk \
+    kernel-devsrc \
     "
 IMAGE_LINGUAS = "en-us"
 
