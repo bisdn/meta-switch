@@ -108,6 +108,12 @@ BISDN_SWITCH_IMAGE_EXTRA_INSTALL += "\
 BISDN_SWITCH_IMAGE_EXTRA_INSTALL += "\
     "
 
+# bisdn convenience
+BISDN_SWITCH_IMAGE_EXTRA_INSTALL += "\
+    htop \
+    tree \
+    gptfdisk \
+    "
 IMAGE_LINGUAS = "en-us"
 
 LICENSE = "MIT"
