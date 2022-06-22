@@ -46,6 +46,7 @@ BISDN_SWITCH_IMAGE_EXTRA_INSTALL += "\
     tcpdump \
     tmux \
     vim \
+    gdb \
     "
 
 IMAGE_LINGUAS = "en-us"
