@@ -71,6 +71,7 @@ BISDN_SWITCH_IMAGE_EXTRA_INSTALL += "\
     expat \
     elfutils \
     elfutils-dev \
+    g++ \
     glibc-dev \
     libedit \
     libedit-dev \
