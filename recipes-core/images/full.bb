@@ -53,6 +53,7 @@ BISDN_SWITCH_IMAGE_EXTRA_INSTALL += "\
 # Default packages to be installed on all supported OS.
 BISDN_SWITCH_IMAGE_EXTRA_INSTALL += "\
     autoconf \
+    automake \
     cmake \
     flex \
     gcc \
