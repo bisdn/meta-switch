@@ -13,3 +13,6 @@ SRC_URI = " \
 S = "${WORKDIR}"
 
 #KERNEL_MODULE_AUTOLOAD += " accton-csp7551-sfp"
+
+# Ignore missing symbols from accton-csp7551-cpld (e.g., accton_i2c_cpld_read)
+EXTRA_OEMAKE += " KBUILD_MODPOST_WARN=1"
