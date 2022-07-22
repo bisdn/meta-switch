@@ -71,6 +71,7 @@ BISDN_SWITCH_IMAGE_EXTRA_INSTALL += "\
     bzip2-dev \
     bridge-utils \
     expat \
+    expat-dev \
     elfutils \
     elfutils-dev \
     g++ \
