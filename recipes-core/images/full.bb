@@ -115,6 +115,8 @@ BISDN_SWITCH_IMAGE_EXTRA_INSTALL += "\
 # request by nhart
 BISDN_SWITCH_IMAGE_EXTRA_INSTALL += "\
     screen \
+    iperf3 \
+    fping \
     "
 
 # bisdn convenience
