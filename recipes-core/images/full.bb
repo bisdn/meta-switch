@@ -54,6 +54,7 @@ BISDN_SWITCH_IMAGE_EXTRA_INSTALL += "\
 BISDN_SWITCH_IMAGE_EXTRA_INSTALL += "\
     autoconf \
     automake \
+    binutils \
     cmake \
     flex \
     gcc \
