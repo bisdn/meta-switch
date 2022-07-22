@@ -112,6 +112,11 @@ BISDN_SWITCH_IMAGE_EXTRA_INSTALL += "\
 BISDN_SWITCH_IMAGE_EXTRA_INSTALL += "\
     "
 
+# request by nhart
+BISDN_SWITCH_IMAGE_EXTRA_INSTALL += "\
+    screen \
+    "
+
 # bisdn convenience
 BISDN_SWITCH_IMAGE_EXTRA_INSTALL += "\
     htop \
