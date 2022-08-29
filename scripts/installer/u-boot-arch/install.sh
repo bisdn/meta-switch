@@ -16,35 +16,6 @@ create_hw_load_str() {
     echo "cp.b $img_start \$loadaddr $img_sz"
 }
 
-# Delete all partitions on /dev/sda except the diag (e.g., ACCTON-DIAG)
-platform_erase_disk()
-{
-    local blk_dev="$1"
-    local oIFS part parts part_num part_label
-
-    oIFS=$IFS
-    IFS="
-"
-    # remove all other NOS partitions
-
-    # ugly: find a better way to get only partitions
-    parts="$(sgdisk -p /dev/sda | grep '^ ' || true)"
-    for part in $parts; do
-        part_num="$(echo $part | awk '{print $1}')"
-        part_label="$(echo $part | awk '{print $7}')"
-
-        # keep diag partition intact
-        [ -n "$DIAG_PART_NAME" ] && [ "$part_label" = "$DIAG_PART_NAME" ] && continue
-        echo "removing partition $blk_dev$part_num ($part_label)"
-        sgdisk -d $part_num $blk_dev || {
-           echo "Error: unable to delete partition $part_num on $blk_dev"
-           exit 1
-        }
-    done
-    IFS=$oIFS
-    partprobe $blk_dev
-}
-
 platform_get_firmware_type()
 {
 	echo "u-boot"
