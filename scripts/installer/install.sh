@@ -271,6 +271,11 @@ platform_install_bootloader_entry()
     /bin/true
 }
 
+platform_setup()
+{
+    /bin/true
+}
+
 onie_platform=$(onie-sysinfo -p)
 
 cd $(dirname $0)
@@ -434,6 +439,8 @@ Name=enp0
 EOF
     ) > "$bisdn_linux_mnt/lib/systemd/network/90-enp.link"
 fi
+
+platform_setup
 
 # Setup fw_env.config
 if [ -n "$UBOOT_ENV_CONFIG" ]; then
