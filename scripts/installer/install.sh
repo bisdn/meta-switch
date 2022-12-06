@@ -6,6 +6,9 @@
 
 BISDN_LINUX_VOLUME_LABEL="BISDN-Linux"
 
+# part_size: BISDN Linux partition in MB
+part_size=6144
+
 set -e
 
 . $(dirname "$0")/lib/backup.sh
@@ -314,8 +317,6 @@ onl_baseplatform="${onl_platform%-r*}"
 
 echo "BISDN Linux Installer"
 
-# part_size: BISDN Linux partition in MB
-part_size=6144
 fs_type="ext4"
 
 # platform_check, if implemented, aborts with an error if the hardware platform
