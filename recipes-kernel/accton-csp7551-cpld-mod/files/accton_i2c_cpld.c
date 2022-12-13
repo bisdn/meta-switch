@@ -34,6 +34,7 @@
 #include <linux/mutex.h>
 #include <linux/delay.h>
 #include <linux/list.h>
+#include <linux/version.h>
 
 
 #define MAX_PORT_NUM				    64
@@ -802,6 +803,11 @@ static int accton_i2c_cpld_remove(struct i2c_client *client)
     accton_i2c_cpld_remove_client(client);
     return 0;
 }
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(6,1,0)
+static void accton_i2c_cpld_remove_6_1(struct i2c_client *client){
+    accton_i2c_cpld_remove(client);
+}
+#endif
 
 int accton_i2c_cpld_read(u8 cpld_addr, u8 reg)
 {
@@ -866,7 +872,12 @@ static struct i2c_driver accton_i2c_cpld_driver = {
         .name = "accton_i2c_cpld",
     },
     .probe		= accton_i2c_cpld_probe,
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(6,1,0)
+    .remove = accton_i2c_cpld_remove_6_1,
+#else
+
     .remove	   	= accton_i2c_cpld_remove,
+#endif
     .id_table     = accton_i2c_cpld_id,
     .address_list = normal_i2c,
 };
