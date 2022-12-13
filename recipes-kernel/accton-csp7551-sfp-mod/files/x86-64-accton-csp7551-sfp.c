@@ -31,6 +31,7 @@
 #include <linux/sysfs.h>
 #include <linux/slab.h>
 #include <linux/delay.h>
+#include <linux/version.h>
 
 #define DRIVER_NAME     "csp7550_sfp" /* Platform dependent */
 
@@ -1953,6 +1954,12 @@ static int sfp_device_remove(struct i2c_client *client)
     return ret;
 }
 
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(6,1,0)
+static void sfp_device_remove_6_1(struct i2c_client *client){
+    sfp_device_remove(client);
+}
+#endif
+
 /* Addresses scanned
  */
 static const unsigned short normal_i2c[] = { I2C_CLIENT_END };
@@ -1962,7 +1969,11 @@ static struct i2c_driver sfp_driver = {
         .name       = DRIVER_NAME,
     },
     .probe          = sfp_device_probe,
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(6,1,0)
+    .remove         = sfp_device_remove_6_1,
+#else
     .remove         = sfp_device_remove,
+#endif
     .id_table       = sfp_device_id,
     .address_list   = normal_i2c,
 };
