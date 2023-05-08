@@ -1,0 +1,4 @@
+# Pin kernel 5.15.77 for now
+LINUX_VERSION = "5.15.77"
+SRCREV_machine = "793d8378b74ac283a4dd7cef1b304553c8a42260"
+SRCREV_meta = "28a9034e474be110394424334cfb2bb3cdb99a61"
