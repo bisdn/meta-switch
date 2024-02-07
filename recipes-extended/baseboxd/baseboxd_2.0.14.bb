@@ -4,7 +4,7 @@ inherit meson
 TARGET_LDFLAGS:remove = "-Wl,--as-needed"
 TARGET_LDFLAGS:append = " -Wl,--no-as-needed"
 
-SRCREV = "jogo_reset_switch_state"
+SRCREV = "f5945b385e762368e2cc861763eeeb7daa630878"
 
 # install service and sysconfig
 do_install:append() {
