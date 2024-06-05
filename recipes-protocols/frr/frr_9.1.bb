@@ -9,11 +9,13 @@ LICENSE = "GPL-2.0-only & LGPL-2.1-only"
 LIC_FILES_CHKSUM = "file://doc/licenses/GPL-2.0;md5=b234ee4d69f5fce4486a80fdaf4a4263 \
                     file://doc/licenses/LGPL-2.1;md5=4fbd65380cdd255951079008b364516c"
 
-SRC_URI = "git://github.com/FRRouting/frr.git;protocol=https;branch=stable/9.0 \
+PR = "r1"
+
+SRC_URI = "git://github.com/FRRouting/frr.git;protocol=https;branch=stable/9.1 \
            file://frr.pam \
            "
 
-SRCREV = "07d6b6d4b974ab744001b6fab0ed88ec571ec59a"
+SRCREV = "312faf8008bb4f3b9e84b8e2758cd2cbdf5742b5"
 
 UPSTREAM_CHECK_GITTAGREGEX = "frr-(?P<pver>\d+(\.\d+)+)$"
 
